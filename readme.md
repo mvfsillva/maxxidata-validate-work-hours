@@ -1,4 +1,4 @@
-## Next Boilerplate
+## Work hour validator
 
 ## Main Libraries
 - React
@@ -9,7 +9,6 @@
 - Styled Components 5.x.x
 - Prettier
 - Server Side Rendering (SSR)
-- SWR
 - react i18next
 - Storybook
 
@@ -18,7 +17,7 @@
 ### 01. Install dependencies
 
 ```sh
-$ yarn
+$ yarn install
 ```
 
 ### 02. Create configs
