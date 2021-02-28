@@ -1,4 +1,4 @@
-## Work hour validator
+## Maxxidata work hour validator
 
 ## Main Libraries
 - React
@@ -8,8 +8,6 @@
 - Next 10.x.x
 - Styled Components 5.x.x
 - Prettier
-- Server Side Rendering (SSR)
-- react i18next
 - Storybook
 
 ## Contributing
@@ -30,12 +28,12 @@ Create a `.env` file at the root of the project. Make sure you follow the [`.env
 $ yarn test
 ```
 
-### 03. Run the project
+### 04. Run the project
 ```sh
 $ yarn dev
 ```
 
-### 03. Run the storybook
+### 05. Run the storybook
 ```sh
 $ yarn storybook
 ```
