@@ -5,11 +5,13 @@ export const Wrapper = styled.header`
   ${({ theme }) => css`
     text-align: center;
     box-sizing: border-box;
-    box-shadow: ${theme.shadow.small};
-    padding: ${theme.spaces.small};
     display: flex;
     align-item: center;
-    justify-content: space-between;
+    justify-content: center;
+
+    h1 {
+      font-size: ${theme.font.sizes.xlarge};
+    }
 
     ${media.greaterThan('medium')`
       text-align: left;
@@ -21,16 +23,12 @@ export const Wrapper = styled.header`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 4.6rem auto 0;
+  margin: 2.6rem auto 0;
 
   ${media.greaterThan('medium')`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 15rem auto;
+    margin: 5rem auto;
   `}
-`
-
-export const ContentSelect = styled.div`
-  width: 22rem;
 `
