@@ -1,76 +1,54 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
-import { darken } from 'polished'
+import { darken, lighten } from 'polished'
 
 type Props = {
   rounded?: boolean
   circle?: boolean
   primary?: boolean
   secondary?: boolean
-  skyBlue?: boolean
   disabled?: boolean
 }
 
 const modifiers = {
-  rounded: (theme) => css`
-    border-radius: ${theme.border.rounded};
-    ${media.greaterThan('medium')`
-      padding: 1.3rem ${theme.spaces.large};
-    `}
-  `,
-  circle: (theme) => css`
-    border-radius: ${theme.border.circle};
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `,
   primary: (theme) => css`
     background-color: ${theme.colors.primary};
+    color: ${theme.colors.white};
     &:hover {
-      background: ${darken(0.1, theme.colors.primary)};
+      background: ${lighten(0.2, theme.colors.primary)};
     }
   `,
   secondary: (theme) => css`
     background-color: ${theme.colors.secondary};
+    color: ${theme.colors.muted};
     &:hover {
-      background: ${darken(0.1, theme.colors.secondary)};
-    }
-  `,
-  skyBlue: (theme) => css`
-    background-color: ${theme.colors.blue};
-    &:hover {
-      background: ${darken(0.1, theme.colors.blue)};
+      background: ${darken(0.2, theme.colors.secondary)};
     }
   `,
   disabled: (theme) => css`
-    background-color: ${theme.colors.muted};
+    background-color: ${darken(0.2, theme.colors.muted)};
     cursor: not-allowed;
-    &:hover {
-      background: ${darken(0.1, theme.colors.muted)};
-    }
   `
 }
 
-export const ButtonWrapper = styled.button<Props>`
-  ${({ theme, rounded, circle, primary, secondary, skyBlue, disabled }) => css`
+export const Wrapper = styled.button<Props>`
+  ${({ theme, primary, secondary, disabled }) => css`
     background-color: ${theme.colors.gray};
     border-radius: ${theme.border.radius};
     color: ${theme.colors.white};
     padding: 1rem ${theme.spaces.small};
-    font-size: ${theme.font.sizes.base};
+    font-size: ${theme.font.sizes.xxsmall};
+    font-weight: 600;
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
     transition: ${theme.transition.ease};
 
-    ${rounded && modifiers.rounded(theme)};
-    ${circle && modifiers.circle(theme)};
+    &:hover {
+      background: ${!disabled && lighten(0.2, theme.colors.primary)};
+    }
+
     ${primary && modifiers.primary(theme)};
     ${secondary && modifiers.secondary(theme)};
-    ${skyBlue && modifiers.skyBlue(theme)};
     ${disabled && modifiers.disabled(theme)};
   `}
 `

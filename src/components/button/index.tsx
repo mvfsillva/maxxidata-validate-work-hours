@@ -1,44 +1,33 @@
-// Packages
-import React from 'react'
+import { FC, ReactNode } from 'react'
 
-// Styles
 import * as S from './styles'
 
 type Props = {
-  children: React.ReactNode
-  rounded?: boolean
-  circle?: boolean
+  children: ReactNode
   primary?: boolean
   secondary?: boolean
-  skyBlue?: boolean
   onClick: () => void
   type?: string
   disabled?: boolean
 }
 
-const Button: React.FC<Props> = ({
+const Button: FC<Props> = ({
   children,
-  rounded,
-  circle,
   primary,
   secondary,
-  skyBlue,
   disabled = false,
   onClick
 }) => (
-  <S.ButtonWrapper
-    rounded={rounded}
-    circle={circle}
+  <S.Wrapper
     primary={primary}
     secondary={secondary}
-    skyBlue={skyBlue}
     onClick={onClick}
     data-testid="button"
     type="button"
     disabled={disabled}
   >
     {children}
-  </S.ButtonWrapper>
+  </S.Wrapper>
 )
 
 export default Button
