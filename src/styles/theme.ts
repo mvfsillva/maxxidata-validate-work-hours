@@ -34,12 +34,11 @@ const theme: any = {
     }
   },
   colors: {
-    primary: '#FBAE16',
-    secondary: '#F19020',
-    blue: '#127CCB',
+    primary: '#111111',
+    secondary: '#ff0080',
     white: '#FFFFFF',
     black: '#000000',
-    gray: '#5f6368',
+    gray: '#666666',
     darkGray: '#3c4043',
     muted: '#E8EFF5'
   },
