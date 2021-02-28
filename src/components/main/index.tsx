@@ -85,11 +85,11 @@ const Main = ({ theme }) => {
           <Input
             name="hourAmount"
             placeholder="fill your hour value: R$ 250,00"
-            onChange={({ target: { value } }) => {
-              if (value) {
-                const val = +onlyNumbers(value)
-                value = currency({ amount: val, currency: 'BRL' })
-                setHourValue(value)
+            onChange={(e) => {
+              if (e.target.value) {
+                const val = +onlyNumbers(e.target.value)
+                e.target.value = currency({ amount: val, currency: 'BRL' })
+                setHourValue(e.target.value)
               }
             }}
           />
